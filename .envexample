@@ -21,3 +21,7 @@ EMAIL_PASSWORD=
 TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_NUMBER=
+
+# twilio msg service see https://www.twilio.com/docs/messaging/services
+# use it insteed of twilio phone number
+TWILIO_MSG_SERVICE_SID=

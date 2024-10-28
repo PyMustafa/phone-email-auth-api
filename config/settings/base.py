@@ -151,6 +151,13 @@ AUTHENTICATION_BACKENDS = (
     "users.backends.phone_backend.PhoneBackend",
 )
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ),
+}
+
+
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -160,16 +167,20 @@ EMAIL_HOST_USER = config('EMAIL_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 
 
+
+
+
 #phone number settings
 PHONENUMBER_DEFAULT_REGION = 'EG'
 
 #token length 'default = 6'
-TOKEN_LENGTH = 8
+TOKEN_LENGTH = 6
 
 #token expire in minutes
-TOKEN_EXPIRE_MIN = 3
+TOKEN_EXPIRE_MIN = 5
 
 #twilio credentials
 TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = config('TWILIO_AUTH_TOKEN')
 TWILIO_PHONE_NUMBER = config('TWILIO_PHONE_NUMBER')
+TWILIO_MSG_SERVICE_SID = config('TWILIO_MSG_SERVICE_SID')
